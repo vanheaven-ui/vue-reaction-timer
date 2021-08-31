@@ -1,6 +1,7 @@
 <template>
   <h1>{{ title }} ⏱️</h1>
-  <Block />
+  <button @click="start">Play</button>
+  <Block v-if="isPlaying"/>
 </template>
 
 <script>
@@ -11,7 +12,14 @@ export default {
   components: {Block},
   data() {
     return {
-      title: 'Vanheaven Reaction Timer'
+      title: 'Vanheaven Reaction Timer',
+      isPlaying: false,
+      delay: null,
+    }
+  },
+  methods: {
+    start() {
+      this.isPlaying = true
     }
   }
 }
@@ -25,5 +33,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+button{
+  cursor: pointer;
 }
 </style>
