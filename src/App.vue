@@ -3,7 +3,7 @@
   <h1>{{ title }} ⏱️</h1>
   <button @click="start">Play</button>
   <Block v-if="isPlaying" :delay="delay" @end="endGame" @hide="hideAlert" />
-  <Results v-show="showScore" :score="score" />
+  <Results v-if="showScore" :score="score" />
 </template>
 
 <script>
