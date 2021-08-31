@@ -20,6 +20,7 @@ export default {
     setTimeout(() => {
       this.showBlock = true;
       this.startTimer();
+      this.$emit("hide");
     }, this.delay);
   },
 
