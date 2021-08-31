@@ -1,7 +1,7 @@
 <template>
   <h1>{{ title }} ⏱️</h1>
   <button @click="start">Play</button>
-  <Block v-if="isPlaying"/>
+  <Block v-if="isPlaying" :delay="delay"/>
 </template>
 
 <script>
@@ -20,6 +20,7 @@ export default {
   methods: {
     start() {
       this.isPlaying = true
+      this.delay = 2000 + Math.random() * 5000
     }
   }
 }

@@ -1,12 +1,37 @@
 <template>
-  <div class="block">
+  <div class="block" v-show="showBlock" >
     <h2>Click Me!</h2>
   </div>
 </template>
 
 <script>
 export default {
+  name: 'Block',
+  props: ['delay'],
+  data() {
+    return {
+      showBlock: false,
+      timer: null,
+      reactionTime: 0,
+    }
+  },
 
+  mounted() {
+    this.startTimer()
+  },
+
+  methods: {
+    startTimer() {
+      console.log(this.delay)
+      setTimeout(() => {
+        this.showBlock = true
+      }, this.delay)
+    },
+
+    stopTimer() {
+
+    }
+  },
 }
 </script>
 
